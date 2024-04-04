@@ -1,14 +1,10 @@
 #!/usr/bin/env ruby
 
 class Node
-  attr_accessor :data
-  attr_accessor :prev
-  attr_accessor :next
+  attr_accessor :data, :prev, :next
 
   def initialize(data, prev_el, next_el)
-    @data = data
-    @prev = prev_el
-    @next = next_el
+    @data, @prev, @next = data, prev_el, next_el
   end
 
   def set_prev(node)
@@ -21,14 +17,10 @@ class Node
 end
 
 class DoublyLinkedList
-  attr_accessor :len
-  attr_accessor :head
-  attr_accessor :tail
+  attr_accessor :len, :head, :tail
 
   def initialize()
-    @len = 0
-    @head = nil
-    @tail = nil
+    @len, @head, @tail = 0, nil, nil
   end
 
   def size
@@ -36,7 +28,7 @@ class DoublyLinkedList
   end
 
   def is_empty?()
-    return @len == 0
+    @len == 0
   end
 
   def add(elem)
@@ -45,8 +37,7 @@ class DoublyLinkedList
 
   def start_head(elem)
     node = Node.new(elem, nil, nil)
-    @head = node
-    @tail = node
+    @head, @tail = node, node
   end
 
   def add_last(elem)
